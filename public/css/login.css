@@ -1,0 +1,110 @@
+* {
+    margin: 0px;
+    padding: 0px;
+}
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: white;
+    /* background: linear-gradient(
+        90deg,
+        rgba(242, 242, 10, 0.17130602240896353) 0%,
+        rgba(121, 18, 9, 0.23012955182072825) 35%,
+        rgba(0, 255, 248, 0.20211834733893552) 62%,
+        rgba(14, 255, 0, 0.19091386554621848) 86%
+    );*/
+}
+
+#app-name-row {
+    text-align: center;
+    margin: 40px;
+}
+
+#app-name-div {
+    font-size: 5em;
+}
+.card {
+    border: none;
+}
+
+.box {
+    width: 80%;
+    height: 465px;
+    padding: 40px;
+    position: absolute;
+    top: 50%;
+    text-align: center;
+    transition: 0.25s;
+}
+
+.box input[type="email"],
+.box input[type="password"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid;
+    border-color: #fbba06 #db0d16 #428ecc #00873e;
+    padding: 10px 10px;
+    width: 250px;
+    outline: none;
+    border-radius: 24px;
+    transition: 0.25s;
+}
+
+.box h1 {
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.box input[type="email"]:focus,
+.box input[type="password"]:focus {
+    width: 300px;
+}
+
+.box input[type="submit"] {
+    border: 0;
+    background: none;
+    display: block;
+    margin: 20px auto;
+    text-align: center;
+    border: 2px solid #00873e;
+    padding: 14px 40px;
+    outline: none;
+
+    border-radius: 24px;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.box input[type="submit"]:hover {
+    background: #00873e;
+}
+
+.forgot {
+    text-decoration: underline;
+}
+#side {
+    margin-top: 30px;
+    width: 80%;
+    height: 500px;
+    background-image: url("../images/abbei.png");
+    background-repeat: no-repeat;
+    background-size: 80%;
+}
+
+@media screen and (max-width: 1444px) {
+    #app-name-div {
+        font-size: 3em;
+    }
+
+    .box {
+        width: 100%;
+    }
+
+    #side {
+        background-size: 80%;
+    }
+}
