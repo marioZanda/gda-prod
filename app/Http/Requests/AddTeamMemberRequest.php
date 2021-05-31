@@ -32,7 +32,7 @@ class AddTeamMemberRequest extends FormRequest
                 Rule::unique('team_members')
                        ->where('firstname', $this->firstname)
             ],
-            'contact' => 'required|numeric',
+            'contact' => 'required',
             'title' => 'required',
             'team_id' => ['nullable',
                 Rule::unique('team_members')

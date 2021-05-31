@@ -27,7 +27,7 @@ class EditSupplierRequest extends FormRequest
         return [
             'name' => 'required|max:255|unique:suppliers,name,'.$this->segment(2),
             'address' => 'required|max:255',
-            'contact' => 'required|numeric',
+            'contact' => 'required',
         ];
     }
 }

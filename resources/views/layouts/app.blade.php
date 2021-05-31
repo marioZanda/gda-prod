@@ -34,7 +34,7 @@
 
     <script type="text/javascript">
         $(document).ready(function() {
-            $('#tableData').paging({limit:10});
+            $('#tableData').paging({limit:20});
             $("#tableData").tablesorter({theme : 'blue',  });
             $('#tableData').tableFilter({});
             $("#export").click(function() {
@@ -77,7 +77,7 @@
             <dialog id="favDialog" hidden>
                 <form action="{{ route('space.change') }}" method="POST">
                     @csrf
-                    <p><label>Agence à gérer :
+                    <p><label>Agence à g�rer :
                             <select name="agence">
                                 <option {{ ($agence == "rouen")?"selected":"" }} value="rouen">Rouen</option>
                                 <option {{ ($agence == "havre")?"selected":"" }} value="havre">Le Havre</option>

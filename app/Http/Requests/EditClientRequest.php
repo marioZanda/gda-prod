@@ -31,7 +31,7 @@ class EditClientRequest extends FormRequest
                 ->ignore($this->segment(2))
             ],
             'address' => 'required',
-            'contact' => 'required|numeric',
+            'contact' => 'required',
             'superviser' => 'required',
             'products' => 'nullable'
         ];

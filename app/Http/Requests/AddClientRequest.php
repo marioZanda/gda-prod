@@ -26,7 +26,7 @@ class AddClientRequest extends FormRequest
         return [
             'name' => 'required|unique:clients|max:255',
             'address' => 'required',
-            'contact' => 'required|numeric',
+            'contact' => 'required',
             'superviser' => 'required',
             'products' => 'nullable'
         ];

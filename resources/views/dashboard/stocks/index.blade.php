@@ -60,7 +60,7 @@
                     <tr>
                         <td style="text-transform: uppercase;">{{$stock->product->reference}}</td>
                         <td hidden>
-                            <?php echo DNS1D::getBarcodeHTML($stock->product->reference, 'C39+',1,50,'black', true);?>
+                            <?php //echo DNS1D::getBarcodeHTML($stock->product->reference, 'C39+',1,50,'black', true);?>
                         </td>
                         <td>{{$stock->product->nature}}</td>
                         <td>{{$stock->product->name}}</td>

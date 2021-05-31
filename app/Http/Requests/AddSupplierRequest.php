@@ -26,7 +26,7 @@ class AddSupplierRequest extends FormRequest
         return [
             'name' => 'required|unique:suppliers|max:255',
             'address' => 'required|max:255',
-            'contact' => 'required|max:15',
+            'contact' => 'required',
         ];
     }
 }

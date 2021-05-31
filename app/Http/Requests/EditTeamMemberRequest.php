@@ -33,7 +33,7 @@ class EditTeamMemberRequest extends FormRequest
                 ->ignore($this->segment(2))
                 ->where('firstname', $this->firstname)
             ],
-            'contact' => 'required|numeric',
+            'contact' => 'required',
             'title' => 'required',
             'team_id' => ['
                 nullable',

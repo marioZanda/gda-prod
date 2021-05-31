@@ -51,7 +51,7 @@
                                         <td>{{$products[$i]->price}} €</td>
                                         <td>{{$stocks[$i]->value}}</td>
                                         <td>{{$products[$i]->alert}}</td>
-                                        <td>{{$products[$i]->supplier->name}}</td>
+                                        <td>@isset($product->supplier){{$products[$i]->supplier->name}}@endisset</td>
                                         </tr>
                                         @endfor
                                 </tbody>

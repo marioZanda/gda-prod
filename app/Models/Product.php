@@ -28,6 +28,7 @@ class Product extends Model
 
     public static $sn = array(
         'Aucune' => array('aucune'),
+        'Outils / ménager' => array('outil','ménager'),
         'Menuiserie' => array('Bois','Panneaux','Dalles','Serrures'),
         'Peinture' => array('Peinture', 'Colle','Enduits / Fixateurs','Toiles','Papiers Peints','Intisse','Brosses','Rouleaux','Lames','Trucs au sol','Lissages
         '),
