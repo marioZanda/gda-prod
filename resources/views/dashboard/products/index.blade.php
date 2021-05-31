@@ -27,25 +27,19 @@
             </div>
             @endif
         </div>
-        <div class="col-sm-6">
-            <div class="row">
-                <form class="form-inline" style="margin-top: 20px ;" action="">
-                    <div class="form-group"><input class="form-control" style="height: 32px;" type="text" name="search"
-                            placeholder="rechercher"></div>
-                    <select class="form-control" name="filter" id="">
-                        <option value="">Trier par :</option>
-                    </select>
-                    <div class="form-group"><button style="height: 32px;" class="btn btn-primary" type="submit"><em
-                                class="fa fa-search"></em></button></div>
-                </form>
-            </div>
-        </div>
+
     </div>
     <div class="row">
         <div class="col-sm-12">
             <div>
-                <a style="margin: 19px;" href="{{ route('products.create')}}" class="btn btn-primary">Nouveau
-                    Produit</a>
+                <div class="col-md-6">
+                    <a style="margin: 19px;" href="{{ route('products.create')}}" class="btn btn-primary">Nouveau
+                        Produit</a>
+                </div>
+                <div class="col-md-6">
+                    <button id="refsBtn" style="margin: 19px;" class="btn btn-primary"
+                        onclick="downloadFile()">Références</button>
+                </div>
             </div>
             <table id="tableData" class="table table-striped tableSorter">
                 <thead>
@@ -132,4 +126,30 @@
             </div>
         </div>
 
+        <script>
+            function downloadFile() {
+                fetch(`products.refs`).then(response => response.json())
+                    .then(refs => treat(refs)).catch((error) => {
+                        console.log(error)
+                });
+            }
+            function treat(p){
+                let ref_array = [];
+                for (var key in p) {
+                    if (p.hasOwnProperty(key)) {
+                        console.log(p[key].reference);
+                        ref_array.push(p[key].reference+"\n");
+                    }
+                }
+                const a = document.createElement("a");
+                a.href = URL.createObjectURL(new Blob(ref_array, {
+                    type: "text/plain"
+                }));
+                a.setAttribute("download", "references.txt");
+                document.body.appendChild(a);
+                a.click();
+                document.body.removeChild(a);
+
+            }
+        </script>
         @endsection

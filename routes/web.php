@@ -3,6 +3,7 @@
 use PhpParser\Node\Expr\BinaryOp\Spaceship;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Product;
 use App\Http\Controllers\spaceController;
 use App\Http\Controllers\TeamMemberController;
 use App\Http\Controllers\TeamController;
@@ -40,6 +41,7 @@ Route::get('in-out.out.team/{team_member_ref}', [InOutController::class, 'ref_ou
 Route::post('in-out.in_store', [InOutController::class, 'in_store'])->name('in-out.in_store');
 Route::post('in-out.out_store', [InOutController::class, 'out_store'])->name('in-out.out_store');
 Route::post('space.change', [spaceController::class, 'change'])->name('space.change');
+Route::get('products.refs', [ProductController::class, 'refs'])->name('products.refs');
 
 Route::resources([
     'suppliers' => SupplierController::class,

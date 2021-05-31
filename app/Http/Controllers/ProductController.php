@@ -116,6 +116,17 @@ class ProductController extends Controller
         return redirect()->route('products.index')->with('success', 'Informations mises à jour!');
     }
 
+
+    public static function refs()
+    {
+        $refs = Product::select('reference', 'name')->get();
+        if ($refs == null) {
+            return response()->json(['error' => 'Identifiant inexistant'], 404);
+        } else {
+            return response()->json($refs)->getData();
+        }
+    }
+
     /**
      * Remove the specified resource from storage.
      *
