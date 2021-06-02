@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : localhost
--- Généré le : mer. 02 juin 2021 à 11:24
+-- Généré le : mer. 02 juin 2021 à 11:32
 -- Version du serveur :  10.4.19-MariaDB
 -- Version de PHP : 8.0.6
 
@@ -27,6 +27,7 @@ SET time_zone = "+00:00";
 -- Structure de la table `clients`
 --
 
+DROP TABLE IF EXISTS `clients`;
 CREATE TABLE `clients` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -50,6 +51,7 @@ INSERT INTO `clients` (`id`, `name`, `address`, `contact`, `superviser_id`, `cre
 -- Structure de la table `client_products`
 --
 
+DROP TABLE IF EXISTS `client_products`;
 CREATE TABLE `client_products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `client_id` bigint(20) UNSIGNED NOT NULL,
@@ -76,6 +78,7 @@ INSERT INTO `client_products` (`id`, `client_id`, `product_id`, `created_at`, `u
 -- Structure de la table `failed_jobs`
 --
 
+DROP TABLE IF EXISTS `failed_jobs`;
 CREATE TABLE `failed_jobs` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `uuid` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
@@ -92,6 +95,7 @@ CREATE TABLE `failed_jobs` (
 -- Structure de la table `migrations`
 --
 
+DROP TABLE IF EXISTS `migrations`;
 CREATE TABLE `migrations` (
   `id` int(10) UNSIGNED NOT NULL,
   `migration` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
@@ -122,6 +126,7 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 -- Structure de la table `mouvments`
 --
 
+DROP TABLE IF EXISTS `mouvments`;
 CREATE TABLE `mouvments` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `action` enum('IN','OUT') COLLATE utf8_unicode_ci NOT NULL,
@@ -159,6 +164,7 @@ INSERT INTO `mouvments` (`id`, `action`, `product_id`, `quantity`, `note`, `team
 -- Structure de la table `password_resets`
 --
 
+DROP TABLE IF EXISTS `password_resets`;
 CREATE TABLE `password_resets` (
   `email` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
   `token` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
@@ -171,6 +177,7 @@ CREATE TABLE `password_resets` (
 -- Structure de la table `products`
 --
 
+DROP TABLE IF EXISTS `products`;
 CREATE TABLE `products` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `reference` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -327,6 +334,7 @@ INSERT INTO `products` (`id`, `reference`, `name`, `brand`, `alert`, `supplier_i
 -- Structure de la table `stocks`
 --
 
+DROP TABLE IF EXISTS `stocks`;
 CREATE TABLE `stocks` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `product_id` bigint(20) UNSIGNED NOT NULL,
@@ -476,6 +484,7 @@ INSERT INTO `stocks` (`id`, `product_id`, `value`, `created_at`, `updated_at`) V
 -- Structure de la table `supervisers`
 --
 
+DROP TABLE IF EXISTS `supervisers`;
 CREATE TABLE `supervisers` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -503,6 +512,7 @@ INSERT INTO `supervisers` (`id`, `firstname`, `lastname`, `contact`, `domain`, `
 -- Structure de la table `suppliers`
 --
 
+DROP TABLE IF EXISTS `suppliers`;
 CREATE TABLE `suppliers` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -532,6 +542,7 @@ INSERT INTO `suppliers` (`id`, `name`, `address`, `contact`, `created_at`, `upda
 -- Structure de la table `teams`
 --
 
+DROP TABLE IF EXISTS `teams`;
 CREATE TABLE `teams` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -553,6 +564,7 @@ INSERT INTO `teams` (`id`, `name`, `superviser_id`, `created_at`, `updated_at`) 
 -- Structure de la table `team_members`
 --
 
+DROP TABLE IF EXISTS `team_members`;
 CREATE TABLE `team_members` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `firstname` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
@@ -652,6 +664,7 @@ INSERT INTO `team_members` (`id`, `firstname`, `lastname`, `reference`, `contact
 -- Structure de la table `users`
 --
 
+DROP TABLE IF EXISTS `users`;
 CREATE TABLE `users` (
   `id` bigint(20) UNSIGNED NOT NULL,
   `name` varchar(191) COLLATE utf8_unicode_ci NOT NULL,
