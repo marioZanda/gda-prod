@@ -137,15 +137,14 @@
                 let ref_array = [];
                 for (var key in p) {
                     if (p.hasOwnProperty(key)) {
-                        console.log(p[key].reference);
-                        ref_array.push(p[key].reference+"\n");
+                        ref_array.push(p[key].reference.toUpperCase()+" | "+p[key].name+"\n");
                     }
                 }
                 const a = document.createElement("a");
                 a.href = URL.createObjectURL(new Blob(ref_array, {
-                    type: "text/plain"
+                    type: "text/csv;charset=utf-8"
                 }));
-                a.setAttribute("download", "references.txt");
+                a.setAttribute("download", "references.csv");
                 document.body.appendChild(a);
                 a.click();
                 document.body.removeChild(a);

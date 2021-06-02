@@ -28,12 +28,12 @@ class Product extends Model
 
     public static $sn = array(
         'Aucune' => array('aucune'),
+	'Outillages / consommables' => array('Brosses','Rouleaux','Lames','Trucs au sol','Lissages'),
         'Outils / ménager' => array('outil','ménager'),
         'Menuiserie' => array('Bois','Panneaux','Dalles','Serrures'),
-        'Peinture' => array('Peinture', 'Colle','Enduits / Fixateurs','Toiles','Papiers Peints','Intisse','Brosses','Rouleaux','Lames','Trucs au sol','Lissages
-        '),
-        'Sol' => array('Linos'),
-        'MultiService' => array('Meubles','Eviers','Robinets','Serrures','Garnitures/outillages'),
+        'Peinture' => array('Peinture', 'Colle','Enduits / Fixateurs','Toile de verre','Papiers Peints'),
+        'Sol' => array('Bobine','Bobine plombante','Lame','Lame plombante'),
+        'MultiService' => array('Plomberie','Menuiserie','Electricite'),
     );
 
     public static function getServiceAndNAture()
